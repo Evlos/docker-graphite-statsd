@@ -33,7 +33,7 @@ if folder_empty /opt/graphite/webapp/graphite/functions/custom; then
 	touch /opt/graphite/webapp/graphite/functions/custom/__init__.py
 fi
 
-export GRAPHITE_WSGI_PROCESSES=${GRAPHITE_WSGI_PROCESSES:-4}
+export GRAPHITE_WSGI_PROCESSES=${GRAPHITE_WSGI_PROCESSES:-1}
 export GRAPHITE_WSGI_THREADS=${GRAPHITE_WSGI_THREADS:-1}
 export GRAPHITE_WSGI_REQUEST_TIMEOUT=${GRAPHITE_WSGI_REQUEST_TIMEOUT:-65}
 export GRAPHITE_WSGI_REQUEST_LINE=${GRAPHITE_WSGI_REQUEST_LINE:-0}
