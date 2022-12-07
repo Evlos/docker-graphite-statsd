@@ -46,9 +46,6 @@ else
     export GUNICORN_EXTRA_PARAMS="--preload --threads=${GRAPHITE_WSGI_THREADS} "
 fi
 
-# start nginx if not disabled
-[[ -f "/etc/service/nginx/down" ]] || sv start nginx || exit 1
-
 exec /opt/graphite/bin/gunicorn wsgi --pythonpath=/opt/graphite/webapp/graphite \
     ${GUNICORN_EXTRA_PARAMS} \
     --worker-class=${GRAPHITE_WSGI_WORKER_CLASS} \
